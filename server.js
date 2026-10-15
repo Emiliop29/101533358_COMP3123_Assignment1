@@ -13,18 +13,21 @@ const {
   notFound
 } = require('./middleware/errorMiddleware');
 
-
-
 const app = express();
+
+// Trust Vercel's reverse proxy
+app.set('trust proxy', 1);
 
 // Middleware
 app.use(helmet());
 app.use(express.json());
 app.use(morgan('dev'));
+
+// Rate limiter
 app.use('/api/v1/emp', apiLimiter);
-// User routes
+
+// Routes
 app.use('/api/v1/user', userRoutes);
-// Employe
 app.use('/api/v1/emp', employeeRoutes);
 
 // Health check
@@ -35,25 +38,24 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Handle unknown endpoints
+// Error handling
 app.use(notFound);
-
-// Centralized error handler
 app.use(errorMiddleware);
-
 
 const PORT = process.env.PORT || 3000;
 
-if (require.main === module) {
-  const startServer = async () => {
-    await connectDB();
+// Initialize database connection for Vercel
+const dbPromise = connectDB();
 
+if (require.main === module) {
+  dbPromise.then(() => {
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
-  };
-
-  startServer();
+  }).catch(error => {
+    console.error('Server startup failed:', error);
+    process.exit(1);
+  });
 }
 
 module.exports = app;
