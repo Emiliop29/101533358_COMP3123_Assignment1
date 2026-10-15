@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose');
-const Employee = require('../models/Employee');
+const Employee = require('../models/employee');
 
 // GET all employees belonging to logged-in user
 const getEmployees = async (req, res) => {
