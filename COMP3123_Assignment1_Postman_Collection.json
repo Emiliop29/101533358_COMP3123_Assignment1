@@ -1,0 +1,556 @@
+{
+  "info": {
+    "_postman_id": "217a62df-befb-437c-b6f0-b6bf617cb300",
+    "name": "COMP3123-R",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48981075"
+  },
+  "item": [
+    {
+      "name": "Signup Check",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"username\": \"evidence_user_2026\",\r\n  \"email\": \"evidence_user_2026@example.com\",\r\n  \"password\": \"TestPassword123!\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/user/signup",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "user",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Check",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"username\": \"evidence_user_2026\",\r\n  \"password\": \"TestPassword123!\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/user/login",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "user",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vercel Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/health",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Employee Check",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"first_name\": \"Michael\",\r\n  \"last_name\": \"Johnson\",\r\n  \"email\": \"michael.evidence2026@example.com\",\r\n  \"position\": \"Software Developer\",\r\n  \"salary\": 75000,\r\n  \"date_of_joining\": \"2026-10-01\",\r\n  \"department\": \"IT\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/emp/employees",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "emp",
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Employee ",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/emp/employees",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "emp",
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Employee with id",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/emp/employees/6ad43c09f34a026133a682f6",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "emp",
+            "employees",
+            "6ad43c09f34a026133a682f6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Employee check",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"position\": \"Senior Software Developer\",\r\n  \"salary\": 85000,\r\n  \"department\": \"Engineering\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/emp/employees/6ad43c09f34a026133a682f6",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "emp",
+            "employees",
+            "6ad43c09f34a026133a682f6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Employee",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/emp/employees?id=6ad43c09f34a026133a682f6",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "emp",
+            "employees"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "6ad43c09f34a026133a682f6"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Duplicate User check",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"username\": \"evidence_user_2026\",\r\n  \"email\": \"evidence_user_2026@example.com\",\r\n  \"password\": \"TestPassword123!\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/user/signup",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "user",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Wrong Password check",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"username\": \"evidence_user_2026\",\r\n  \"password\": \"WrongPassword123!\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/user/login",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "user",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "No token or invalid token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/emp/employees",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "emp",
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Invalid Id Check",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/emp/employees/invalid123",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "emp",
+            "employees",
+            "invalid123"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Inavlid Input Check",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"first_name\": \"Test\",\r\n  \"last_name\": \"Validation\",\r\n  \"email\": \"invalid-email\",\r\n  \"position\": \"Developer\",\r\n  \"salary\": -5000,\r\n  \"date_of_joining\": \"2026-10-01\",\r\n  \"department\": \"IT\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/emp/employees",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "emp",
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Employee Not found Check",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/emp/employees/507f1f77bcf86cd799439011",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "emp",
+            "employees",
+            "507f1f77bcf86cd799439011"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Signup user B Check",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"username\": \"evidence_user_b_2026\",\r\n  \"email\": \"evidence_user_b_2026@example.com\",\r\n  \"password\": \"TestPassword456!\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/user/signup",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "user",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User B Check",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"username\": \"evidence_user_b_2026\",\r\n  \"password\": \"TestPassword456!\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/user/login",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "user",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "429 Limit Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://comp-3123-assignment1-chi.vercel.app/api/v1/emp/employees",
+          "protocol": "https",
+          "host": [
+            "comp-3123-assignment1-chi",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "emp",
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "Test",
+      "value": ""
+    },
+    {
+      "key": "Emilio",
+      "value": ""
+    },
+    {
+      "key": "json_web_token_09vd",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0grr",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_06gh",
+      "secret": true
+    }
+  ]
+}
