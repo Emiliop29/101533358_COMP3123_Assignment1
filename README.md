@@ -205,8 +205,3 @@ https://comp-3123-assignment1-chi.vercel.app
 
 https://comp-3123-assignment1-chi.vercel.app/health
 
-## Submission
-
-The assignment submission includes the project source code, GitHub repository link, ZIP archive, exported Postman collection, environment configuration example, and testing evidence screenshots.
-
-The `node_modules` directory and actual `.env` file are excluded from the submission.
